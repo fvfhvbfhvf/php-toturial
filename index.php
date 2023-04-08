@@ -39,14 +39,14 @@ if(isset($_POST['name'])){
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $desc = $_POST['desc'];
-    $sql = "INSERT INTO `trip`.`form` (`name`, `age`, `gender`, `email`, `phone`, `other`, `dt`) VALUES ('$name', '$age', '$gender', '$email', '$phone', '$desc', current_timestamp());";
+    $sql = "INSERT INTO `trip`.`form` (`name`, `father-name`, `address`,`phone_number` `desc`, `dt`) VALUES ('$name','$father_name', '$address', '$phone_number', '$desc', current_timestamp());";
     if($con->query($sql) == true){
         echo "Successfully inserted";}
         $con->close();
 
     ?>
 <body>
-    <img class="bg" src="bg.jpg" alt="IIT Kharagpur">
+    <img class="bg" src="building.jpg" alt="IIT Kharagpur">
     <div class="container">
         <h1>Welcome to IIT Kharagpur US Trip form</h3>
         <p>Enter your details and submit this form to confirm your participation in the trip </p>
@@ -57,10 +57,8 @@ if(isset($_POST['name'])){
     ?>
         <form action="index.php" method="post">
             <input type="text" name="name" id="name" placeholder="Enter your name">
-            <input type="text" name="age" id="age" placeholder="Enter your Age">
-            <input type="text" name="gender" id="gender" placeholder="Enter your gender">
-            <input type="email" name="email" id="email" placeholder="Enter your email">
-            <input type="phone" name="phone" id="phone" placeholder="Enter your phone">
+            <input type="text" name="father_name" id="father_name" placeholder="Enter your Father Name">
+            <input type="phone" name="phone_number" id="phone_number" placeholder="Enter your phone">
             <textarea name="desc" id="desc" cols="30" rows="10" placeholder="Enter any other information here"></textarea>
             <button class="btn">Submit</button> 
         </form>
